@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PLArmyLife.Properties
+namespace PLArmyLifeLife.Properties
 {
 
 

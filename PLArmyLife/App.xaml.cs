@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace PLArmyLife
+namespace PLArmyLifeLife
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml

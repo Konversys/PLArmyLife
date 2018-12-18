@@ -54,7 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -62,7 +62,56 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Model\Classes\Adapter\ConscriptUSA.cs" />
+    <Compile Include="Model\Classes\Adapter\RusificatedConscriptUSA.cs" />
+    <Compile Include="Model\Classes\Bridge\BadConditions.cs" />
+    <Compile Include="Model\Classes\Bridge\GoodConditions.cs" />
+    <Compile Include="Model\Classes\Bridge\PlanA.cs" />
+    <Compile Include="Model\Classes\Bridge\PlanB.cs" />
+    <Compile Include="Model\Classes\Bridge\War.cs" />
+    <Compile Include="Model\Classes\Compos\Ammo.cs" />
+    <Compile Include="Model\Classes\Compos\Composite.cs" />
+    <Compile Include="Model\Classes\Compos\Fuel.cs" />
+    <Compile Include="Model\Classes\Compos\ZIP.cs" />
+    <Compile Include="Model\Classes\Decorator\ServicemanDecorator.cs" />
+    <Compile Include="Model\Classes\Decorator\ServiceManDuty.cs" />
+    <Compile Include="Model\Classes\Decorator\ServicemanResponsible.cs" />
+    <Compile Include="Model\Classes\Delegate\Conscript.cs" />
+    <Compile Include="Model\Classes\Delegate\ContractTechnician.cs" />
+    <Compile Include="Model\Classes\Delegate\ExperiencedOfficer.cs" />
+    <Compile Include="Model\Classes\Delegate\HighLevelKnowledge.cs" />
+    <Compile Include="Model\Classes\Delegate\HighRank.cs" />
+    <Compile Include="Model\Classes\Delegate\LowLevelKnowledge.cs" />
+    <Compile Include="Model\Classes\Delegate\LowRank.cs" />
+    <Compile Include="Model\Classes\Delegate\Serviceman.cs" />
+    <Compile Include="Model\Classes\Facade\Colonel.cs" />
+    <Compile Include="Model\Classes\Facade\Sq.cs" />
+    <Compile Include="Model\Classes\Flyweight\AirdefensePlatoon.cs" />
+    <Compile Include="Model\Classes\Flyweight\ConnectionPlatoon.cs" />
+    <Compile Include="Model\Classes\Flyweight\MedicalPlatoon.cs" />
+    <Compile Include="Model\Classes\Flyweight\PlatoonFactory.cs" />
+    <Compile Include="Model\Classes\Flyweight\TankPlatoon.cs" />
+    <Compile Include="Model\Classes\Iterator\Platoon.cs" />
+    <Compile Include="Model\Classes\Iterator\RollCall.cs" />
+    <Compile Include="Model\Classes\Iterator\Solder.cs" />
+    <Compile Include="Model\Classes\Iterator\SolderNumerator.cs" />
+    <Compile Include="Model\Classes\Proxy\ProxyStock.cs" />
+    <Compile Include="Model\Classes\Proxy\Stock.cs" />
+    <Compile Include="Model\Enums\ERank.cs" />
+    <Compile Include="Model\Enums\ESubdivision.cs" />
+    <Compile Include="Model\Examples\Example.cs" />
+    <Compile Include="Model\Interfaces\Adapter\IServiceMan.cs" />
+    <Compile Include="Model\Interfaces\Adapter\IServicemanUSA.cs" />
+    <Compile Include="Model\Interfaces\Bridge\IPlan.cs" />
+    <Compile Include="Model\Interfaces\Compos\IItem.cs" />
+    <Compile Include="Model\Interfaces\Decorator\IEmergency.cs" />
+    <Compile Include="Model\Interfaces\Delegate\ICommand.cs" />
+    <Compile Include="Model\Interfaces\Delegate\IEquipment.cs" />
+    <Compile Include="Model\Interfaces\Iterator\ISolderIterator.cs" />
+    <Compile Include="Model\Interfaces\Iterator\ISolderNumerable.cs" />
+    <Compile Include="Model\Interfaces\Proxy\IMilitaryStock.cs" />
+    <Compile Include="Interfaces\IMove.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +134,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Model\Diagrams\CD.EAP" />
+    <None Include="Model\Diagrams\Proxy.vpp" />
+    <None Include="Model\Diagrams\Proxy.vpp.bak_000f" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,5 +145,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

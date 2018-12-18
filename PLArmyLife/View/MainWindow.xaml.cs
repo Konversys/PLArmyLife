@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PLArmyLife.ViewModel.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PLArmyLife
+namespace PLArmyLifeLife
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
