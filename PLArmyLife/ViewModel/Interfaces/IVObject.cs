@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace PLArmyLife.ViewModel.Interfaces
 {
-    interface IMove
+    interface IVObject
     {
-        void Move(Point from, Point to);
-        void SetItem(Point point, Image texture, string title);
-        void DeleteItem(string title);
-        void DeleteItem(Point point);
+        BitmapImage image { get; }
+        String title { get; }
+        String msg { get; }
+        Point pos { get; }
+
     }
 }

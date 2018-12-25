@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLArmyLifeLife"
         mc:Ignorable="d"
-        Title="Симулятор армии" Height="450" Width="800">
+        x:Name="Window"
+        Title="Симулятор армии" Height="600" Width="1000">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Menu HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Width="{Binding ElementName=Window, Path=ActualWidth, NotifyOnSourceUpdated=True}">
+            <MenuItem Header="Файл"></MenuItem>
+            <MenuItem Header="Редактировать"></MenuItem>
+            <MenuItem Header="Вид"></MenuItem>
+            <MenuItem Header="Настройки"></MenuItem>
+            <MenuItem Header="Справка"></MenuItem>
+        </Menu>
+        <Canvas x:Name="field" HorizontalAlignment="Left" Height="555" Grid.Column="0" VerticalAlignment="Top" Width="800" Grid.Row="1" Background="LightGray"/>
     </Grid>
 </Window>
