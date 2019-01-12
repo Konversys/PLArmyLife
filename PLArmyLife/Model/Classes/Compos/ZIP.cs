@@ -13,9 +13,13 @@ namespace PLArmyLife.Model.Classes.Compos
     /// </summary>
     class ZIP : IItem, IDrawable
     {
-        public List<string> Take(ESubdivision subdivision)
+        public ZIP()
         {
             History.GetHistory().AddEvent(new Event("Создан ЗИП"));
+        }
+
+        public List<string> Take(ESubdivision subdivision)
+        {
             List<string> vs = new List<string>();
             vs.Add(String.Format("Вы взяли комплект ЗИП"));
             return vs;

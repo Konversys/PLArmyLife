@@ -13,9 +13,13 @@ namespace PLArmyLife.Model.Classes.Compos
     /// </summary>
     class Fuel : IItem, IDrawable
     {
-        public List<string> Take(ESubdivision subdivision)
+        public Fuel()
         {
             History.GetHistory().AddEvent(new Event("Создано топливо"));
+        }
+
+        public List<string> Take(ESubdivision subdivision)
+        {
             List<string> vs = new List<string>();
             vs.Add(String.Format("Вы взяли топливо"));
             return vs;

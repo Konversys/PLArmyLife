@@ -1,9 +1,8 @@
 ﻿using PLArmyLife.Model.Enums;
 using PLArmyLife.Model.Interfaces.Compos;
+using PLArmyLife.ViewModel.Model;
 using System;
 using System.Collections.Generic;
-using System.Windows;
-using PLArmyLife.ViewModel.Model;
 
 namespace PLArmyLife.Model.Classes.Compos
 {
@@ -12,11 +11,11 @@ namespace PLArmyLife.Model.Classes.Compos
     /// Представляет компонент, который может содержать другие компоненты и реализует механизм для их добавления и удаления
     /// </summary>
     class Composite : IItem
-    { 
+    {
         /// <summary>
         /// Хранит компоненты
         /// </summary>
-        List<IItem> components = new List<IItem>();
+        private List<IItem> components = new List<IItem>();
 
         //private IItem _itemImplementation;
 
@@ -37,6 +36,7 @@ namespace PLArmyLife.Model.Classes.Compos
         {
             components.Remove(item);
         }
+
         /// <summary>
         /// Взять выданные подразделению предметы
         /// </summary>
@@ -49,21 +49,27 @@ namespace PLArmyLife.Model.Classes.Compos
                 case ESubdivision.Военнослущащий:
                     list.Add(String.Format("             Выдать предметы: {0}", subdivision));
                     break;
+
                 case ESubdivision.Танк:
                     list.Add(String.Format("         Выдать предметы: {0}", subdivision));
                     break;
+
                 case ESubdivision.Взвод:
                     list.Add(String.Format("     Выдать предметы: {0}", subdivision));
                     break;
+
                 case ESubdivision.Рота:
                     list.Add(String.Format(" Выдать предметы: {0}", subdivision));
                     break;
+
                 case ESubdivision.Батальен:
                     list.Add(String.Format("Выдать предметы: {0}", subdivision));
                     break;
+
                 case ESubdivision.Полк:
                     list.Add(String.Format("Выдать предметы: {0}", subdivision));
                     break;
+
                 default:
                     list.Add(String.Format("Выдать предметы: {0}", subdivision));
                     break;

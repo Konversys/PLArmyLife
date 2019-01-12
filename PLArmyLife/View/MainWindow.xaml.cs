@@ -1,28 +1,10 @@
-﻿using PLArmyLife.ViewModel.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using PLArmyLife.Model.Classes.Compos;
-using PLArmyLife.Model.Classes.Delegate;
+﻿using PLArmyLife.Model.Classes.Factory;
 using PLArmyLife.Model.Classes.Iterator;
-using PLArmyLife.Model.Classes.Proxy;
-using PLArmyLife.Model.Enums;
-using PLArmyLife.Model.Interfaces;
-using PLArmyLife.Model.Interfaces.Compos;
+using PLArmyLife.Model.Classes.Prototype;
+using PLArmyLife.Model.Classes.Singleton;
 using PLArmyLife.ViewModel.Interfaces.Factory;
 using PLArmyLife.ViewModel.Model;
-using PLArmyLife.Model.Classes.Singleton;
+using System.Windows;
 
 namespace PLArmyLifeLife
 {
@@ -35,17 +17,25 @@ namespace PLArmyLifeLife
         {
             InitializeComponent();
             string sb = "";
+
             IDrawableFactory drawableFactory = new TankFactory();
-            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(50, 50).canvas);
-            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(250, 50).canvas);
-            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 50).canvas);
+
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(50, 50).Canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(250, 50).Canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 50).Canvas);
             drawableFactory = new PlatoonFactory();
-            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(100, 250).canvas);
-            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 250).canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(100, 250).Canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 250).Canvas);
+
+            SolderPFactory prototype = new SolderPFactory(new Solder("Пикалыч", "Ком взвода"));
+            field.Children.Add(prototype.MakeCopy().Draw(PicSize.Large).Offset(155, 400).Canvas);
+            field.Children.Add(prototype.MakeCopy().Draw(PicSize.Large).Offset(505, 400).Canvas);
+
             foreach (var item in History.GetHistory().GetEvents())
             {
                 sb += $"{item.Title}\n";
             }
+
             Data.Text = sb;
         }
     }

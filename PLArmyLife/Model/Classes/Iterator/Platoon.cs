@@ -1,11 +1,11 @@
-﻿using PLArmyLife.Model.Enums;
+﻿using PLArmyLife.Model.Classes.Singleton;
+using PLArmyLife.Model.Enums;
 using PLArmyLife.Model.Interfaces.Compos;
 using PLArmyLife.Model.Interfaces.Iterator;
-using System.Collections.Generic;
-using System.Windows;
 using PLArmyLife.ViewModel.Interfaces;
 using PLArmyLife.ViewModel.Model;
-using PLArmyLife.Model.Classes.Singleton;
+using System.Collections.Generic;
+using System.Windows;
 
 namespace PLArmyLife.Model.Classes.Iterator
 {
@@ -21,6 +21,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             solders.Clear();
         }
+
         /// <summary>
         /// Приспособленец
         /// Задать Имя взвода и присоединиться
@@ -30,25 +31,30 @@ namespace PLArmyLife.Model.Classes.Iterator
             this.title = title;
             return title;
         }
+
         /// <summary>
         /// Название взвода
         /// </summary>
         public string title { get; private set; }
+
         /// <summary>
         /// Список взвода
         /// </summary>
-        List<Solder> solders;
+        private List<Solder> solders;
+
         public Platoon()
         {
             History.GetHistory().AddEvent(new Event("Создан взвод"));
             this.solders = new List<Solder>();
         }
+
         public Platoon(string title)
         {
             History.GetHistory().AddEvent(new Event($"Создан взвод {title}"));
             this.solders = new List<Solder>();
             this.title = title;
         }
+
         /// <summary>
         /// Количество бойцов во взводе
         /// </summary>
@@ -57,6 +63,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             return solders.Count;
         }
+
         /// <summary>
         /// Количество бойцов
         /// </summary>
@@ -64,6 +71,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             get { return solders.Count; }
         }
+
         /// <summary>
         /// Текущий солдат
         /// </summary>
@@ -73,6 +81,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             get { return solders[index]; }
         }
+
         /// <summary>
         /// Создать итератор
         /// </summary>
@@ -81,6 +90,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             return new SolderNumerator(this);
         }
+
         /// <summary>
         /// Добавить солдата
         /// </summary>
@@ -90,6 +100,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             this.solders.Add(new Solder(name, post));
         }
+
         /// <summary>
         /// Удалить солдата
         /// </summary>
@@ -100,7 +111,8 @@ namespace PLArmyLife.Model.Classes.Iterator
             solders.RemoveAll(x => x.name == name);
         }
 
-        List<IItem> components = new List<IItem>();
+        private List<IItem> components = new List<IItem>();
+
         public List<string> Take(ESubdivision subdivision = ESubdivision.Взвод)
         {
             List<string> list = new List<string>();
@@ -129,7 +141,6 @@ namespace PLArmyLife.Model.Classes.Iterator
             components.Remove(item);
         }
 
-
         public VField Draw(PicSize size)
         {
             VField field = new VField();
@@ -149,6 +160,7 @@ namespace PLArmyLife.Model.Classes.Iterator
 
             return field;
         }
+
         public VField Draw()
         {
             VField field = new VField();

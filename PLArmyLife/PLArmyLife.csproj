@@ -109,6 +109,8 @@
     <Compile Include="Model\Classes\Flyweight\MedicalPlatoon.cs" />
     <Compile Include="Model\Classes\Flyweight\PlatoonFlyFactory.cs" />
     <Compile Include="Model\Classes\Flyweight\TankPlatoon.cs" />
+    <Compile Include="Model\Classes\Prototype\SolderPFactory.cs" />
+    <Compile Include="Model\Interfaces\Prototype\ICopyable.cs" />
     <Compile Include="Model\Classes\Iterator\Platoon.cs" />
     <Compile Include="Model\Classes\Iterator\RollCall.cs" />
     <Compile Include="Model\Classes\Iterator\Solder.cs" />
@@ -133,8 +135,9 @@
     <Compile Include="Model\Interfaces\Iterator\ISolderNumerable.cs" />
     <Compile Include="Model\Interfaces\Proxy\IMilitaryStock.cs" />
     <Compile Include="ViewModel\Interfaces\Factory\IDrawableFactory.cs" />
-    <Compile Include="ViewModel\Interfaces\Factory\PlatoonFactory.cs" />
-    <Compile Include="ViewModel\Interfaces\Factory\TankFactory.cs" />
+    <Compile Include="Model\Classes\Factory\PlatoonFactory.cs" />
+    <Compile Include="Model\Classes\Factory\SolderFactory.cs" />
+    <Compile Include="Model\Classes\Factory\TankFactory.cs" />
     <Compile Include="ViewModel\Interfaces\IDrawable.cs" />
     <Compile Include="ViewModel\Interfaces\IVObject.cs" />
     <Compile Include="ViewModel\Model\PicSize.cs" />

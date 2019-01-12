@@ -17,27 +17,27 @@ namespace PLArmyLife.ViewModel.Model
     {
         public VField(BitmapImage image, PicSize size, string title = null, string msg = null)
         {
-            objects = new List<VObject>();
-            canvas = new Canvas();
+            Objects = new List<VObject>();
+            Canvas = new Canvas();
             this.Add(image, size, new Point(0,0), title, msg);
         }
         public VField(BitmapImage image, PicSize size, Point point, string title = null, string msg = null)
         {
-            objects = new List<VObject>();
-            canvas = new Canvas();
+            Objects = new List<VObject>();
+            Canvas = new Canvas();
             this.Add(image, size, point, title, msg);
         }
         public VField()
         {
-            objects = new List<VObject>();
-            canvas = new Canvas();
+            Objects = new List<VObject>();
+            Canvas = new Canvas();
         }
 
-        public Canvas canvas { get; private set; }
-        public List<VObject> objects { get; private set; }
+        public Canvas Canvas { get; private set; }
+        public List<VObject> Objects { get; private set; }
         public void ClearObjects()
         {
-            objects.Clear();
+            Objects.Clear();
         }
         /// <summary>
         /// Добавить объект
@@ -80,8 +80,8 @@ namespace PLArmyLife.ViewModel.Model
                 };
                 can.Children.Add(mLabel);
             }
-            canvas.Children.Add(can);
-            objects.Add(new VObject(image, pos, size, title, msg));
+            Canvas.Children.Add(can);
+            Objects.Add(new VObject(image, pos, size, title, msg));
         }
         /// <summary>
         /// Добавить объект
@@ -103,11 +103,11 @@ namespace PLArmyLife.ViewModel.Model
         /// <param name="isHorizontal">Ось смещения в случае если точка уже занята</param>
         public void Add(VField obj, bool isHorizontal)
         {
-            foreach (var item in obj.objects)
+            foreach (var item in obj.Objects)
             {
-                while (objects.Where(x => x.pos.X == item.pos.X && x.pos.Y == item.pos.Y).Count() != 0)
+                while (Objects.Where(x => x.Position.X == item.Position.X && x.Position.Y == item.Position.Y).Count() != 0)
                 {
-                    switch (item.size)
+                    switch (item.Size)
                     {
                         case PicSize.VerySmall:
                             item.Offset(40, isHorizontal);
@@ -128,11 +128,11 @@ namespace PLArmyLife.ViewModel.Model
                             item.Offset(1, isHorizontal);
                             break;
                     }
-                    obj.canvas.Margin = new Thickness() {Left = item.pos.X, Top = item.pos.Y};
+                    obj.Canvas.Margin = new Thickness() {Left = item.Position.X, Top = item.Position.Y};
                 }
             }
-            canvas.Children.Add(obj.canvas);
-            objects.AddRange(obj.objects);
+            Canvas.Children.Add(obj.Canvas);
+            Objects.AddRange(obj.Objects);
         }
         /// <summary>
         /// Смещение объекта
@@ -142,12 +142,12 @@ namespace PLArmyLife.ViewModel.Model
         /// <returns></returns>
         public VField Offset(double x, double y)
         {
-            foreach (var item in objects)
+            foreach (var item in Objects)
             {
                 item.Offset(x, y);
             }
 
-            canvas.Margin = new Thickness() {Left = canvas.Margin.Left + x, Top = canvas.Margin.Top + y};
+            Canvas.Margin = new Thickness() {Left = Canvas.Margin.Left + x, Top = Canvas.Margin.Top + y};
             return this;
         }
         /// <summary>

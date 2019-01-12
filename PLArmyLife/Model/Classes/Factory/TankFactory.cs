@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using PLArmyLife.Model.Classes.Compos;
 using PLArmyLife.Model.Classes.Iterator;
+using PLArmyLife.ViewModel.Interfaces;
+using PLArmyLife.ViewModel.Interfaces.Factory;
 using PLArmyLife.ViewModel.Model;
 
-namespace PLArmyLife.ViewModel.Interfaces.Factory
+namespace PLArmyLife.Model.Classes.Factory
 {
     /// <summary>
     /// Фабрика боевых танков

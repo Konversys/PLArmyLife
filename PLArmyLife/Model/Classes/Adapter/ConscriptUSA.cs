@@ -1,10 +1,5 @@
-﻿using PLArmyLife.Model.Classes.Delegate;
-using PLArmyLife.Model.Interfaces.Adapter;
+﻿using PLArmyLife.Model.Interfaces.Adapter;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PLArmyLife.Model.Classes.Adapter
 {

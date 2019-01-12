@@ -14,10 +14,10 @@ namespace PLArmyLife.ViewModel.Interfaces
     /// </summary>
     interface IVObject
     {
-        BitmapImage image { get; }
-        string title { get; }
-        string msg { get; }
-        Point pos { get; }
+        BitmapImage Image { get; }
+        string Title { get; }
+        string Message { get; }
+        Point Position { get; }
 
     }
 }

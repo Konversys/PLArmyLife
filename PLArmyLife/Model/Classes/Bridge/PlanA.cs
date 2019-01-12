@@ -1,10 +1,5 @@
-﻿using PLArmyLife.Model.Interfaces;
-using PLArmyLife.Model.Interfaces.Bridge;
+﻿using PLArmyLife.Model.Interfaces.Bridge;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PLArmyLife.Model.Classes.Bridge
 {
@@ -15,9 +10,10 @@ namespace PLArmyLife.Model.Classes.Bridge
     class PlanA : IPlan
     {
         public string Greeting { get; private set; }
+
         public PlanA()
         {
-             this.Greeting = String.Format(" Используем план А");
+            this.Greeting = String.Format(" Используем план А");
         }
 
         public string Attack()

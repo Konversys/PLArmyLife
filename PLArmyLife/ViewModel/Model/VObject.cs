@@ -17,19 +17,19 @@ namespace PLArmyLife.ViewModel.Model
     {
         public VObject(BitmapImage image, PicSize size, string title = null, string msg = null)
         {
-            this.image = image;
-            this.title = title;
-            this.msg = msg;
-            this.size = size;
-            pos = new Point(0, 0);
+            this.Image = image;
+            this.Title = title;
+            this.Message = msg;
+            this.Size = size;
+            Position = new Point(0, 0);
         }
         public VObject(BitmapImage image, Point pos, PicSize size, string title = null, string msg = null)
         {
-            this.image = image;
-            this.title = title;
-            this.msg = msg;
-            this.pos = pos;
-            this.size = size;
+            this.Image = image;
+            this.Title = title;
+            this.Message = msg;
+            this.Position = pos;
+            this.Size = size;
         }
         /// <summary>
         /// Смещение объекта
@@ -38,7 +38,7 @@ namespace PLArmyLife.ViewModel.Model
         /// <param name="y"></param>
         public void Offset(double x, double y)
         {
-            this.pos = new Point(pos.X + x, pos.Y + y);
+            this.Position = new Point(Position.X + x, Position.Y + y);
         }
         /// <summary>
         /// Смещение объекта
@@ -48,14 +48,14 @@ namespace PLArmyLife.ViewModel.Model
         public void Offset(double value, bool isHorizontal)
         {
             if (isHorizontal)
-                this.pos = new Point(pos.X + value, pos.Y);
+                this.Position = new Point(Position.X + value, Position.Y);
             else
-                this.pos = new Point(pos.X, pos.Y + value);
+                this.Position = new Point(Position.X, Position.Y + value);
         }
-        public BitmapImage image { get; }
-        public string title { get; }
-        public string msg { get; }
-        public Point pos { get; private set; }
-        public PicSize size { get; private set; }
+        public BitmapImage Image { get; }
+        public string Title { get; }
+        public string Message { get; }
+        public Point Position { get; private set; }
+        public PicSize Size { get; private set; }
     }
 }

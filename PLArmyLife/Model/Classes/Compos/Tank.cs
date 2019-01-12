@@ -13,9 +13,13 @@ namespace PLArmyLife.Model.Classes.Compos
 {
     class Tank : IItem, IDrawable
     {
-        public List<string> Take(ESubdivision subdivision)
+        public Tank()
         {
             History.GetHistory().AddEvent(new Event("Создан танк"));
+        }
+
+        public List<string> Take(ESubdivision subdivision)
+        {
             List<string> vs = new List<string>();
             vs.Add(String.Format("Вы взяли танк"));
             return vs;

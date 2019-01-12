@@ -1,11 +1,7 @@
 ﻿using PLArmyLife.Model.Classes.Delegate;
-using PLArmyLife.Model.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PLArmyLife.Model.Classes.Singleton;
+using PLArmyLife.Model.Enums;
+using PLArmyLife.Model.Interfaces;
 using PLArmyLife.ViewModel.Interfaces;
 using PLArmyLife.ViewModel.Model;
 
@@ -14,16 +10,18 @@ namespace PLArmyLife.Model.Classes.Iterator
     /// <summary>
     /// Солдат
     /// </summary>
-    class Solder : Serviceman
+    class Solder : Serviceman, ISolderCopyable, IDrawable
     {
         /// <summary>
         /// Имя
         /// </summary>
         public string name { get; private set; }
+
         /// <summary>
         /// Должность
         /// </summary>
         public string post { get; private set; }
+
         /// <summary>
         /// Создать солдата
         /// </summary>
@@ -35,9 +33,10 @@ namespace PLArmyLife.Model.Classes.Iterator
             equipment = new HighLevelKnowledge();
             command = new LowRank();
             rank = ERank.Солдат;
-            this.post = post;
             this.name = name;
+            this.post = post;
         }
+
         public Solder()
         {
             History.GetHistory().AddEvent(new Event("Создан солдат"));
@@ -53,6 +52,11 @@ namespace PLArmyLife.Model.Classes.Iterator
         {
             return new VField(VImages.Solder, size, $"{post}",
                 $"{Greeting}");
+        }
+
+        public Solder Copy()
+        {
+            return new Solder(name, post);
         }
     }
 }
