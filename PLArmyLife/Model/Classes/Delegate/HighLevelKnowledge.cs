@@ -10,12 +10,12 @@ namespace PLArmyLife.Model.Classes.Delegate
     {
         public string Break()
         {
-            return String.Format("     Я слишком опытен чтобы ломать технику");
+            return String.Format("Я слишком опытен чтобы ломать технику");
         }
 
         public string Repair()
         {
-            return String.Format("     Я могу легко починить технику");
+            return String.Format("Я могу легко починить технику");
         }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using PLArmyLife.Model.Enums;
 using System.Collections.Generic;
+using PLArmyLife.ViewModel.Interfaces;
 
 namespace PLArmyLife.Model.Interfaces.Compos
 {
     /// <summary>
     /// Предмет
     /// </summary>
-    interface IItem
+    interface IItem : IDrawable
     {
         /// <summary>
         /// Взять предмет для...

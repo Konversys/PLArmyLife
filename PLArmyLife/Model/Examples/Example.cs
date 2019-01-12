@@ -23,7 +23,7 @@ namespace PLArmyLife.Model.Examples
         /// </summary>
         public static void GoProxyStock()
         {
-            Serviceman serviceman = new ExperiencedOfficer();
+            Solder serviceman = new ExperiencedOfficer();
             IMilitaryStock militaryStock = new ProxyStock(serviceman, 100, 20, 15);
             Print(militaryStock.TakeArmor(80));
             Print(militaryStock.TakeArmor(10));
@@ -39,7 +39,7 @@ namespace PLArmyLife.Model.Examples
         /// </summary>
         public static void GoDelegateServiceman()
         {
-            Serviceman serviceman;
+            Solder serviceman;
 
             serviceman = new Conscript();
             Print(serviceman.Greeting);
@@ -65,7 +65,7 @@ namespace PLArmyLife.Model.Examples
         /// </summary>
         public static void GoAdapterRusConscriptUSA()
         {
-            Serviceman serviceman = new Conscript();
+            Solder serviceman = new Conscript();
             Print(serviceman.Greeting);
             Print(serviceman.CanICommand());
             Print(serviceman.CanIEquipment());
@@ -190,8 +190,8 @@ namespace PLArmyLife.Model.Examples
         /// </summary>
         public static void GoFlyweightPlatoonSpecialty()
         {
-            PlatoonFactory platoonFactory = new PlatoonFactory();
-            Platoon platoon = platoonFactory.GetPlatoon("Танкисты");
+            PlatoonFlyFactory platoonFlyFactory = new PlatoonFlyFactory();
+            Platoon platoon = platoonFlyFactory.GetPlatoon("Танкисты");
             if (platoon != null)
             {
                 platoon.SetTitleAndConnect("2Т-15");
@@ -199,15 +199,15 @@ namespace PLArmyLife.Model.Examples
                 platoon.SetTitleAndConnect("1Т-18");
             }
 
-            platoon = platoonFactory.GetPlatoon("Артиллеристы");
+            platoon = platoonFlyFactory.GetPlatoon("Артиллеристы");
             if (platoon != null)
                 platoon.SetTitleAndConnect("3М-08");
 
-            platoon = platoonFactory.GetPlatoon("Связисты");
+            platoon = platoonFlyFactory.GetPlatoon("Связисты");
             if (platoon != null)
                 platoon.SetTitleAndConnect("2С-12");
 
-            platoon = platoonFactory.GetPlatoon("Медицинский");
+            platoon = platoonFlyFactory.GetPlatoon("Медицинский");
             if (platoon != null)
             {
                 platoon.SetTitleAndConnect("5М-17");

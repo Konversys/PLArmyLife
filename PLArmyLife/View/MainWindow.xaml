@@ -24,6 +24,7 @@
             <MenuItem Header="Настройки"></MenuItem>
             <MenuItem Header="Справка"></MenuItem>
         </Menu>
-        <Canvas x:Name="field" HorizontalAlignment="Left" Height="555" Grid.Column="0" VerticalAlignment="Top" Width="800" Grid.Row="1" Background="LightGray"/>
+        <Canvas x:Name="field" HorizontalAlignment="Left" Height="555" Grid.Column="0" VerticalAlignment="Top" Width="759" Grid.Row="1" Background="Gray" Margin="0,0.4,0,-2.6"/>
+        <TextBlock x:Name="Data" HorizontalAlignment="Left" Margin="764,5,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="537" Width="226"/>
     </Grid>
 </Window>

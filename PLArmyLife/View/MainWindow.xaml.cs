@@ -13,6 +13,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PLArmyLife.Model.Classes.Compos;
+using PLArmyLife.Model.Classes.Delegate;
+using PLArmyLife.Model.Classes.Iterator;
+using PLArmyLife.Model.Classes.Proxy;
+using PLArmyLife.Model.Enums;
+using PLArmyLife.Model.Interfaces;
+using PLArmyLife.Model.Interfaces.Compos;
+using PLArmyLife.ViewModel.Interfaces.Factory;
 using PLArmyLife.ViewModel.Model;
 
 namespace PLArmyLifeLife
@@ -25,10 +33,15 @@ namespace PLArmyLifeLife
         public MainWindow()
         {
             InitializeComponent();
-            VHelper vHelper = new VHelper(field);
-            vHelper.Add(VImages.Solder, PicSize.VeryLarge, new Point(100, 20), "Генерал", "Сдаем 600 рублей на жалюзи");
-            vHelper.Add(VImages.Solder, PicSize.Medium, new Point(320, 70), "Солдат", "сук(( пиздец((09(");
-            field = vHelper.field;
+            string sb = "";
+            IDrawableFactory drawableFactory = new TankFactory();
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(50, 50).canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(250, 50).canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 50).canvas);
+            drawableFactory = new PlatoonFactory();
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(100, 250).canvas);
+            field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 250).canvas);
+            Data.Text = sb;
         }
     }
 }

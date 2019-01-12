@@ -2,6 +2,8 @@
 using PLArmyLife.Model.Interfaces.Compos;
 using System;
 using System.Collections.Generic;
+using System.Windows;
+using PLArmyLife.ViewModel.Model;
 
 namespace PLArmyLife.Model.Classes.Compos
 {
@@ -15,6 +17,9 @@ namespace PLArmyLife.Model.Classes.Compos
         /// Хранит компоненты
         /// </summary>
         List<IItem> components = new List<IItem>();
+
+        //private IItem _itemImplementation;
+
         /// <summary>
         /// Добавить элемент
         /// </summary>
@@ -71,6 +76,32 @@ namespace PLArmyLife.Model.Classes.Compos
                 }
             }
             return list;
+        }
+
+        public VField Draw()
+        {
+            VField field = new VField();
+            foreach (var item in components)
+            {
+                if (item.GetType() == typeof(Composite))
+                    field.Add(item.Draw().Offset(0, 40), false);
+                else
+                    field.Add(item.Draw(), true);
+            }
+            return field;
+        }
+
+        public VField Draw(PicSize size)
+        {
+            VField field = new VField();
+            foreach (var item in components)
+            {
+                if (item.GetType() == typeof(Composite))
+                    field.Add(item.Draw(size).Offset(0, 40), false);
+                else
+                    field.Add(item.Draw(), true);
+            }
+            return field;
         }
     }
 }

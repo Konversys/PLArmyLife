@@ -8,30 +8,30 @@
         /// <summary>
         /// Солдат
         /// </summary>
-        Soldier = 1,
+        Солдат = 1,
         /// <summary>
         /// Сержант
         /// </summary>
-        Sergeant,
+        Сержант,
         /// <summary>
         /// Летенант
         /// </summary>
-        Lieutenant,
+        Лейтенант,
         /// <summary>
         /// Капитан
         /// </summary>
-        Captain,
+        Капитан,
         /// <summary>
         /// Майор
         /// </summary>
-        Major,
+        Майор,
         /// <summary>
         /// Полковник
         /// </summary>
-        Colonel,
+        Полковник,
         /// <summary>
         /// Генерал
         /// </summary>
-        General
+        Генерал
     }
 }

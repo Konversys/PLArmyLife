@@ -2,13 +2,16 @@
 using PLArmyLife.Model.Interfaces.Compos;
 using PLArmyLife.Model.Interfaces.Iterator;
 using System.Collections.Generic;
+using System.Windows;
+using PLArmyLife.ViewModel.Interfaces;
+using PLArmyLife.ViewModel.Model;
 
 namespace PLArmyLife.Model.Classes.Iterator
 {
     /// <summary>
     /// Взвод
     /// </summary>
-    class Platoon : ISolderNumerable, IItem
+    class Platoon : ISolderNumerable, IItem, IDrawable
     {
         /// <summary>
         /// Очистить список солдат
@@ -121,6 +124,46 @@ namespace PLArmyLife.Model.Classes.Iterator
         public void RemoveItem(IItem item)
         {
             components.Remove(item);
+        }
+
+
+        public VField Draw(PicSize size)
+        {
+            VField field = new VField();
+            int row = 0, x = 0, y = 0, dx = 70;
+            foreach (var solder in solders)
+            {
+                field.Add(VImages.Solder, size, new Point(x, y), $"{solder.post}", $"{solder.name}");
+                x += dx;
+                row++;
+                if (row == 3)
+                {
+                    row = 0;
+                    x = 0;
+                    y += dx;
+                }
+            }
+
+            return field;
+        }
+        public VField Draw()
+        {
+            VField field = new VField();
+            int row = 0, x = 0, y = 0, dx = 70;
+            foreach (var solder in solders)
+            {
+                field.Add(VImages.Solder, PicSize.Small, new Point(x, y), $"{solder.post}", $"{solder.name}");
+                x += dx;
+                row++;
+                if (row == 3)
+                {
+                    row = 0;
+                    x = 0;
+                    y += dx;
+                }
+            }
+
+            return field;
         }
     }
 }

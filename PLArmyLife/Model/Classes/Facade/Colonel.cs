@@ -1,11 +1,12 @@
 ﻿using PLArmyLife.Model.Classes.Delegate;
 using PLArmyLife.Model.Enums;
-using PLArmyLife.Model.Interfaces.Iterator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PLArmyLife.Model.Classes.Iterator;
+using PLArmyLife.ViewModel.Model;
 
 namespace PLArmyLife.Model.Classes.Facade
 {
@@ -19,7 +20,7 @@ namespace PLArmyLife.Model.Classes.Facade
         {
             command = new HighRank();
             equipment = new HighLevelKnowledge();
-            rank = ERank.Colonel;
+            rank = ERank.Полковник;
         }
         public List<string> ToManage(Sq sq)
         {

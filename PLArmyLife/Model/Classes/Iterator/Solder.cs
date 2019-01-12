@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PLArmyLife.ViewModel.Interfaces;
+using PLArmyLife.ViewModel.Model;
 
-namespace PLArmyLife.Model.Interfaces.Iterator
+namespace PLArmyLife.Model.Classes.Iterator
 {
     /// <summary>
     /// Солдат
@@ -30,9 +32,24 @@ namespace PLArmyLife.Model.Interfaces.Iterator
         {
             equipment = new HighLevelKnowledge();
             command = new LowRank();
-            rank = ERank.Soldier;
+            rank = ERank.Солдат;
             this.post = post;
             this.name = name;
+        }
+        public Solder()
+        {
+        }
+
+        public virtual VField Draw()
+        {
+            return new VField(VImages.Solder, PicSize.Medium, $"{post}",
+                $"{Greeting}");
+        }
+
+        public VField Draw(PicSize size)
+        {
+            return new VField(VImages.Solder, size, $"{post}",
+                $"{Greeting}");
         }
     }
 }

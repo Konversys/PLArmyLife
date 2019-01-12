@@ -11,11 +11,11 @@ namespace PLArmyLife.Model.Classes.Flyweight
     /// <summary>
     /// Фабрика приспособленцев - создает объекты разделяемых приспособленцев
     /// </summary>
-    class PlatoonFactory
+    class PlatoonFlyFactory
     {
         Dictionary<string, Platoon> batalion;
 
-        public PlatoonFactory()
+        public PlatoonFlyFactory()
         {
             this.batalion = new Dictionary<string, Platoon>();
             batalion.Add("Медицинский", new MedicalPlatoon());

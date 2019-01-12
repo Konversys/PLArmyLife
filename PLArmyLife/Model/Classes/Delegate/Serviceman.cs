@@ -4,6 +4,8 @@ using PLArmyLife.Model.Interfaces.Adapter;
 using PLArmyLife.Model.Interfaces.Decorator;
 using PLArmyLife.Model.Interfaces.Delegate;
 using System;
+using PLArmyLife.ViewModel.Interfaces;
+using PLArmyLife.ViewModel.Model;
 
 namespace PLArmyLife.Model.Classes.Delegate
 {

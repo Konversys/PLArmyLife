@@ -43,7 +43,7 @@ namespace PLArmyLife.Model.Classes.Facade
         public List<string> Equip()
         {
             List<string> vs = new List<string>();
-            PlatoonFactory platoonFactory = new PlatoonFactory();
+            PlatoonFlyFactory platoonFactory = new PlatoonFlyFactory();
             RollCall rollCall = new RollCall();
             Composite tank = new Composite();
 
@@ -132,7 +132,7 @@ namespace PLArmyLife.Model.Classes.Facade
         public List<string> AddSubPlatoon()
         {
             List<string> vs = new List<string>();
-            PlatoonFactory platoonFactory = new PlatoonFactory();
+            PlatoonFlyFactory platoonFactory = new PlatoonFlyFactory();
             Platoon platoon = platoonFactory.GetPlatoonClear("Артиллеристы");
             vs.Add(platoon.SetTitleAndConnect("5F-13"));
             sq.Add(platoon);

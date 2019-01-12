@@ -9,7 +9,7 @@ namespace PLArmyLife.Model.Classes.Decorator
     /// </summary>
     class ServicemanDecorator : IEmergency
     {
-        IEmergency serviceman;
+        readonly IEmergency serviceman;
 
         public ServicemanDecorator(IEmergency serviceman)
         {

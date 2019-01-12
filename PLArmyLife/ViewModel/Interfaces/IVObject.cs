@@ -9,11 +9,14 @@ using System.Windows.Media.Imaging;
 
 namespace PLArmyLife.ViewModel.Interfaces
 {
+    /// <summary>
+    /// Метаданные об объекте
+    /// </summary>
     interface IVObject
     {
         BitmapImage image { get; }
-        String title { get; }
-        String msg { get; }
+        string title { get; }
+        string msg { get; }
         Point pos { get; }
 
     }

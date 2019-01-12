@@ -1,9 +1,10 @@
 ﻿using PLArmyLife.Model.Enums;
 using System;
+using PLArmyLife.Model.Classes.Iterator;
 
 namespace PLArmyLife.Model.Classes.Delegate
 {
-    class ContractTechnician : Serviceman
+    class ContractTechnician : Solder
     {
         /// <summary>
         /// Технарь
@@ -12,10 +13,10 @@ namespace PLArmyLife.Model.Classes.Delegate
         /// </summary>
         public ContractTechnician()
         {
-            this.Greeting = String.Format("Я контрактник - выпускник технического училища:");
+            this.Greeting = String.Format("Я контрактник - выпускник технического училища");
             command = new LowRank();
             equipment = new HighLevelKnowledge();
-            rank = ERank.Sergeant;
+            rank = ERank.Солдат;
         }
     }
 }

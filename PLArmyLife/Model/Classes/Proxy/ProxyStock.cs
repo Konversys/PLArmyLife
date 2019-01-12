@@ -41,7 +41,7 @@ namespace PLArmyLife.Model.Classes.Proxy
         /// <param name="count">Кол-во</param>
         public string TakeArmor(int count)
         {
-            ERank allowRank = ERank.Lieutenant;
+            ERank allowRank = ERank.Лейтенант;
             string ret = String.Format("Вы {0} ~ {1}: Броня - ", rank, allowRank);
             if (rank >= allowRank)
             {
@@ -58,7 +58,7 @@ namespace PLArmyLife.Model.Classes.Proxy
         /// <param name="count">Кол-во</param>
         public string TakeFood(int count)
         {
-            ERank allowRank = ERank.Sergeant;
+            ERank allowRank = ERank.Сержант;
             string ret = String.Format("Вы {0} ~ {1}: Еда - ", rank, allowRank);
             if (rank >= allowRank)
             {
@@ -75,7 +75,7 @@ namespace PLArmyLife.Model.Classes.Proxy
         /// <param name="count">Кол-во</param>
         public string TakeWeapon(int count)
         {
-            ERank allowRank = ERank.Major;
+            ERank allowRank = ERank.Майор;
             string ret = String.Format("Вы {0} ~ {1}: Оружие - ", rank, allowRank);
             if (rank >= allowRank)
             {

@@ -10,12 +10,12 @@ namespace PLArmyLife.Model.Classes.Delegate
     {
         public string ExecuteOrder()
         {
-            return String.Format("     Мое звание слишком маленькое чтобы отдавать приказы");
+            return String.Format("Мое звание слишком маленькое чтобы отдавать приказы");
         }
 
         public string GiveOrder()
         {
-            return String.Format("     Я всегда готов выполнить приказ");
+            return String.Format("Я всегда готов выполнить приказ");
         }
     }
 }

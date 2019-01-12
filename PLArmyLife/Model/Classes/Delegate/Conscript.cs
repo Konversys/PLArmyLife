@@ -1,9 +1,10 @@
 ﻿using PLArmyLife.Model.Enums;
 using System;
+using PLArmyLife.Model.Classes.Iterator;
 
 namespace PLArmyLife.Model.Classes.Delegate
 {
-    class Conscript : Serviceman
+    class Conscript : Solder
     {
         /// <summary>
         /// Срочник новобранец
@@ -15,7 +16,7 @@ namespace PLArmyLife.Model.Classes.Delegate
             this.Greeting = String.Format("Я срочник-новобранец:");
             equipment = new LowLevelKnowledge();
             command = new LowRank();
-            rank = ERank.Soldier;
+            rank = ERank.Сержант;
         }
     }
 }

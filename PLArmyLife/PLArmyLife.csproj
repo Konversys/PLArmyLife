@@ -77,6 +77,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Classes\AbstractFactory\FranceTemplateWarFactory.cs" />
+    <Compile Include="Model\Classes\AbstractFactory\JapanTemplateWarFactory.cs" />
     <Compile Include="Model\Classes\Adapter\ConscriptUSA.cs" />
     <Compile Include="Model\Classes\Adapter\RusificatedConscriptUSA.cs" />
     <Compile Include="Model\Classes\Bridge\BadConditions.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Model\Classes\Compos\Ammo.cs" />
     <Compile Include="Model\Classes\Compos\Composite.cs" />
     <Compile Include="Model\Classes\Compos\Fuel.cs" />
+    <Compile Include="Model\Classes\Compos\Tank.cs" />
     <Compile Include="Model\Classes\Compos\ZIP.cs" />
     <Compile Include="Model\Classes\Decorator\ServicemanDecorator.cs" />
     <Compile Include="Model\Classes\Decorator\ServiceManDuty.cs" />
@@ -104,7 +107,7 @@
     <Compile Include="Model\Classes\Flyweight\AirdefensePlatoon.cs" />
     <Compile Include="Model\Classes\Flyweight\ConnectionPlatoon.cs" />
     <Compile Include="Model\Classes\Flyweight\MedicalPlatoon.cs" />
-    <Compile Include="Model\Classes\Flyweight\PlatoonFactory.cs" />
+    <Compile Include="Model\Classes\Flyweight\PlatoonFlyFactory.cs" />
     <Compile Include="Model\Classes\Flyweight\TankPlatoon.cs" />
     <Compile Include="Model\Classes\Iterator\Platoon.cs" />
     <Compile Include="Model\Classes\Iterator\RollCall.cs" />
@@ -115,6 +118,8 @@
     <Compile Include="Model\Enums\ERank.cs" />
     <Compile Include="Model\Enums\ESubdivision.cs" />
     <Compile Include="Model\Examples\Example.cs" />
+    <Compile Include="Model\Interfaces\AbstractFactory\ICondition.cs" />
+    <Compile Include="Model\Interfaces\AbstractFactory\IWarFactory.cs" />
     <Compile Include="Model\Interfaces\Adapter\IServiceMan.cs" />
     <Compile Include="Model\Interfaces\Adapter\IServicemanUSA.cs" />
     <Compile Include="Model\Interfaces\Bridge\IPlan.cs" />
@@ -125,9 +130,13 @@
     <Compile Include="Model\Interfaces\Iterator\ISolderIterator.cs" />
     <Compile Include="Model\Interfaces\Iterator\ISolderNumerable.cs" />
     <Compile Include="Model\Interfaces\Proxy\IMilitaryStock.cs" />
+    <Compile Include="ViewModel\Interfaces\Factory\IDrawableFactory.cs" />
+    <Compile Include="ViewModel\Interfaces\Factory\PlatoonFactory.cs" />
+    <Compile Include="ViewModel\Interfaces\Factory\TankFactory.cs" />
+    <Compile Include="ViewModel\Interfaces\IDrawable.cs" />
     <Compile Include="ViewModel\Interfaces\IVObject.cs" />
     <Compile Include="ViewModel\Model\PicSize.cs" />
-    <Compile Include="ViewModel\Model\VHelper.cs" />
+    <Compile Include="ViewModel\Model\VField.cs" />
     <Compile Include="ViewModel\Model\VImages.cs" />
     <Compile Include="ViewModel\Model\VObject.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
@@ -182,5 +191,6 @@
   <ItemGroup>
     <Resource Include="Images\ammo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

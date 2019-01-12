@@ -1,9 +1,10 @@
-﻿using PLArmyLife.Model.Interfaces.Iterator;
+﻿using PLArmyLife.Model.Classes.Iterator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PLArmyLife.Model.Interfaces.Iterator;
 
 namespace PLArmyLife.Model.Classes.Iterator
 {

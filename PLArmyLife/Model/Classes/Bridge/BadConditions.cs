@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PLArmyLife.Model.Interfaces.AbstractFactory;
 using PLArmyLife.Model.Interfaces.Bridge;
 
 namespace PLArmyLife.Model.Classes.Bridge
@@ -11,7 +12,7 @@ namespace PLArmyLife.Model.Classes.Bridge
     /// Плохой исход войны
     /// Уточненная абстракция
     /// </summary>
-    class BadConditions : War
+    class BadConditions : War, ICondition
     {
         public BadConditions(IPlan plan) : base(plan)
         {

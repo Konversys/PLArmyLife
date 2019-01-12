@@ -1,9 +1,10 @@
 ﻿using PLArmyLife.Model.Enums;
 using System;
+using PLArmyLife.Model.Classes.Iterator;
 
 namespace PLArmyLife.Model.Classes.Delegate
 {
-    class ExperiencedOfficer : Serviceman
+    class ExperiencedOfficer : Solder
     {
         /// <summary>
         /// Офицер
@@ -15,7 +16,7 @@ namespace PLArmyLife.Model.Classes.Delegate
             this.Greeting = String.Format("Я опытный офицер:");
             command = new HighRank();
             equipment = new HighLevelKnowledge();
-            rank = ERank.Major;
+            rank = ERank.Майор;
         }
     }
 }
