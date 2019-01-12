@@ -115,6 +115,8 @@
     <Compile Include="Model\Classes\Iterator\SolderNumerator.cs" />
     <Compile Include="Model\Classes\Proxy\ProxyStock.cs" />
     <Compile Include="Model\Classes\Proxy\Stock.cs" />
+    <Compile Include="Model\Classes\Singleton\Event.cs" />
+    <Compile Include="Model\Classes\Singleton\History.cs" />
     <Compile Include="Model\Enums\ERank.cs" />
     <Compile Include="Model\Enums\ESubdivision.cs" />
     <Compile Include="Model\Examples\Example.cs" />
