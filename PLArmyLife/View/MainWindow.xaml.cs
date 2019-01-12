@@ -22,6 +22,7 @@ using PLArmyLife.Model.Interfaces;
 using PLArmyLife.Model.Interfaces.Compos;
 using PLArmyLife.ViewModel.Interfaces.Factory;
 using PLArmyLife.ViewModel.Model;
+using PLArmyLife.Model.Classes.Singleton;
 
 namespace PLArmyLifeLife
 {
@@ -41,6 +42,10 @@ namespace PLArmyLifeLife
             drawableFactory = new PlatoonFactory();
             field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(100, 250).canvas);
             field.Children.Add(drawableFactory.CreateDrawable().Draw().Offset(450, 250).canvas);
+            foreach (var item in History.GetHistory().GetEvents())
+            {
+                sb += $"{item.Title}\n";
+            }
             Data.Text = sb;
         }
     }

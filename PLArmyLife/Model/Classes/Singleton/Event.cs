@@ -8,6 +8,16 @@ namespace PLArmyLife.Model.Classes.Singleton
 {
     class Event
     {
+        public Event(string title)
+        {
+            Title = title;
+        }
+        public Event(string title, string message)
+        {
+            Title = title;
+            Message = message;
+        }
+
         public Event(int year, string title, string message)
         {
             Year = year;

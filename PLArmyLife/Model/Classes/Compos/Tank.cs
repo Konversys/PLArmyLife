@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PLArmyLife.Model.Classes.Singleton;
 using PLArmyLife.Model.Enums;
 using PLArmyLife.Model.Interfaces.Compos;
 using PLArmyLife.ViewModel.Interfaces;
@@ -14,6 +15,7 @@ namespace PLArmyLife.Model.Classes.Compos
     {
         public List<string> Take(ESubdivision subdivision)
         {
+            History.GetHistory().AddEvent(new Event("Создан танк"));
             List<string> vs = new List<string>();
             vs.Add(String.Format("Вы взяли танк"));
             return vs;

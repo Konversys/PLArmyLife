@@ -3,6 +3,7 @@ using PLArmyLife.Model.Enums;
 using PLArmyLife.Model.Interfaces;
 using System;
 using System.Collections.Generic;
+using PLArmyLife.Model.Classes.Singleton;
 
 namespace PLArmyLife.Model.Classes.Proxy
 {
@@ -41,6 +42,7 @@ namespace PLArmyLife.Model.Classes.Proxy
         /// <param name="count">Кол-во</param>
         public string TakeArmor(int count)
         {
+            History.GetHistory().AddEvent(new Event("Попытка взять боезапас"));
             ERank allowRank = ERank.Лейтенант;
             string ret = String.Format("Вы {0} ~ {1}: Броня - ", rank, allowRank);
             if (rank >= allowRank)
@@ -58,6 +60,7 @@ namespace PLArmyLife.Model.Classes.Proxy
         /// <param name="count">Кол-во</param>
         public string TakeFood(int count)
         {
+            History.GetHistory().AddEvent(new Event("Попытка взять еду со склада"));
             ERank allowRank = ERank.Сержант;
             string ret = String.Format("Вы {0} ~ {1}: Еда - ", rank, allowRank);
             if (rank >= allowRank)
@@ -75,6 +78,7 @@ namespace PLArmyLife.Model.Classes.Proxy
         /// <param name="count">Кол-во</param>
         public string TakeWeapon(int count)
         {
+            History.GetHistory().AddEvent(new Event("Попытка взять оружие со склада"));
             ERank allowRank = ERank.Майор;
             string ret = String.Format("Вы {0} ~ {1}: Оружие - ", rank, allowRank);
             if (rank >= allowRank)
@@ -89,6 +93,7 @@ namespace PLArmyLife.Model.Classes.Proxy
 
         string RefuseLowRank()
         {
+            History.GetHistory().AddEvent(new Event("Отказ склада из-за низкого ранга"));
             return "Ваш ранг слишком низкий для получения этого предмета";
         }
     }

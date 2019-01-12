@@ -1,4 +1,5 @@
-﻿using PLArmyLife.Model.Interfaces.Decorator;
+﻿using PLArmyLife.Model.Classes.Singleton;
+using PLArmyLife.Model.Interfaces.Decorator;
 
 namespace PLArmyLife.Model.Classes.Decorator
 {
@@ -13,6 +14,7 @@ namespace PLArmyLife.Model.Classes.Decorator
 
         public ServicemanDecorator(IEmergency serviceman)
         {
+            History.GetHistory().AddEvent(new Event($"Создан военнослущащий {serviceman.GetType().ToString()}"));
             this.serviceman = serviceman;
         }
 

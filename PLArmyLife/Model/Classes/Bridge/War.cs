@@ -1,4 +1,5 @@
-﻿using PLArmyLife.Model.Interfaces;
+﻿using PLArmyLife.Model.Classes.Singleton;
+using PLArmyLife.Model.Interfaces;
 using PLArmyLife.Model.Interfaces.Bridge;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace PLArmyLife.Model.Classes.Bridge
         public string Greeting { get; private set; }
         public War(IPlan plan)
         {
+            History.GetHistory().AddEvent(new Event("Война начата"));
             this.Greeting = String.Format("Начинаем войну");
             this.plan = plan;
         }

@@ -1,5 +1,6 @@
 ﻿using PLArmyLife.Model.Interfaces;
 using System;
+using PLArmyLife.Model.Classes.Singleton;
 
 namespace PLArmyLife.Model.Classes.Proxy
 {
@@ -11,6 +12,7 @@ namespace PLArmyLife.Model.Classes.Proxy
 
         public Stock(int countArmor, int countFood, int countWeapon)
         {
+            History.GetHistory().AddEvent(new Event("Создание склада"));
             this.countArmor = countArmor;
             this.countFood = countFood;
             this.countWeapon = countWeapon;
@@ -57,6 +59,7 @@ namespace PLArmyLife.Model.Classes.Proxy
 
         string RefuseNoCount()
         {
+            History.GetHistory().AddEvent(new Event("Отказ склада из-за отстутствия предметов"));
             return "Заданного кол-ва предметов нет на складе";
         }
     }

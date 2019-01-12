@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PLArmyLife.Model.Classes.Singleton;
 using PLArmyLife.ViewModel.Interfaces;
 using PLArmyLife.ViewModel.Model;
 
@@ -30,6 +31,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         /// <param name="post">Должность</param>
         public Solder(string name, string post)
         {
+            History.GetHistory().AddEvent(new Event("Создан солдат"));
             equipment = new HighLevelKnowledge();
             command = new LowRank();
             rank = ERank.Солдат;
@@ -38,6 +40,7 @@ namespace PLArmyLife.Model.Classes.Iterator
         }
         public Solder()
         {
+            History.GetHistory().AddEvent(new Event("Создан солдат"));
         }
 
         public virtual VField Draw()

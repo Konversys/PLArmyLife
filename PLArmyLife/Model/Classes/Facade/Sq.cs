@@ -1,6 +1,7 @@
 ﻿using PLArmyLife.Model.Classes.Compos;
 using PLArmyLife.Model.Classes.Flyweight;
 using PLArmyLife.Model.Classes.Iterator;
+using PLArmyLife.Model.Classes.Singleton;
 using PLArmyLife.Model.Enums;
 using PLArmyLife.Model.Interfaces.Compos;
 using PLArmyLife.Model.Interfaces.Iterator;
@@ -20,6 +21,7 @@ namespace PLArmyLife.Model.Classes.Facade
     {
         public Sq()
         {
+            History.GetHistory().AddEvent(new Event("Создана рота"));
             this.sq = new List<Platoon>();
         }
         /// <summary>

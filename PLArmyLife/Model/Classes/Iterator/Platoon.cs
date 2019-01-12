@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows;
 using PLArmyLife.ViewModel.Interfaces;
 using PLArmyLife.ViewModel.Model;
+using PLArmyLife.Model.Classes.Singleton;
 
 namespace PLArmyLife.Model.Classes.Iterator
 {
@@ -39,10 +40,12 @@ namespace PLArmyLife.Model.Classes.Iterator
         List<Solder> solders;
         public Platoon()
         {
+            History.GetHistory().AddEvent(new Event("Создан взвод"));
             this.solders = new List<Solder>();
         }
         public Platoon(string title)
         {
+            History.GetHistory().AddEvent(new Event($"Создан взвод {title}"));
             this.solders = new List<Solder>();
             this.title = title;
         }
