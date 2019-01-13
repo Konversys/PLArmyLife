@@ -86,6 +86,15 @@
     <Compile Include="Model\Classes\Bridge\PlanA.cs" />
     <Compile Include="Model\Classes\Bridge\PlanB.cs" />
     <Compile Include="Model\Classes\Bridge\War.cs" />
+    <Compile Include="Model\Classes\Builder\Builder.cs" />
+    <Compile Include="Model\Classes\Builder\MedicalPlatoonBuilder.cs" />
+    <Compile Include="Model\Classes\Builder\ConnectonPlatoonBuilder.cs" />
+    <Compile Include="Model\Classes\Builder\AirdefensePlatoonBuilder.cs" />
+    <Compile Include="Model\Classes\Builder\TankPlatoonBuilder.cs" />
+    <Compile Include="Model\Classes\Compos\Airkid.cs" />
+    <Compile Include="Model\Classes\Compos\Radio.cs" />
+    <Compile Include="Model\Classes\Compos\Gun.cs" />
+    <Compile Include="ViewModel\Interfaces\Builder\DrawableBuilder.cs" />
     <Compile Include="Model\Classes\Compos\Ammo.cs" />
     <Compile Include="Model\Classes\Compos\Composite.cs" />
     <Compile Include="Model\Classes\Compos\Fuel.cs" />
@@ -196,6 +205,10 @@
   <ItemGroup>
     <Resource Include="Images\ammo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\aidkit.png" />
+    <Resource Include="Images\gun.png" />
+    <Resource Include="Images\radio.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

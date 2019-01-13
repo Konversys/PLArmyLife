@@ -167,5 +167,9 @@ namespace PLArmyLife.ViewModel.Model
         {
             return this;
         }
+        public void ChangeBackground(SolidColorBrush brush)
+        {
+            Canvas.Background = brush;
+        }
     }
 }

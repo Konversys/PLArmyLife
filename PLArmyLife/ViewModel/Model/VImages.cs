@@ -31,5 +31,17 @@ namespace PLArmyLife.ViewModel.Model
         /// Комплект ЗИП
         /// </summary>
         public static readonly BitmapImage ZIP = new BitmapImage(new Uri("D:/ASTU/7s/АПиПП/PLArmyLife/PLArmyLife/Images/zip.png", UriKind.Absolute));
+        /// <summary>
+        /// Комплект Пушка
+        /// </summary>
+        public static readonly BitmapImage Gun = new BitmapImage(new Uri("D:/ASTU/7s/АПиПП/PLArmyLife/PLArmyLife/Images/gun.png", UriKind.Absolute));
+        /// <summary>
+        /// Комплект Аптечка
+        /// </summary>
+        public static readonly BitmapImage Aidkit = new BitmapImage(new Uri("D:/ASTU/7s/АПиПП/PLArmyLife/PLArmyLife/Images/aidkit.png", UriKind.Absolute));
+        /// <summary>
+        /// Комплект Радиостанция
+        /// </summary>
+        public static readonly BitmapImage Radio = new BitmapImage(new Uri("D:/ASTU/7s/АПиПП/PLArmyLife/PLArmyLife/Images/radio.png", UriKind.Absolute));
     }
 }
