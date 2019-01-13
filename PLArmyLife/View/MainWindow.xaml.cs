@@ -1,6 +1,7 @@
 ﻿using PLArmyLife.Model.Classes.Builder;
 using PLArmyLife.Model.Classes.Factory;
 using PLArmyLife.Model.Classes.Iterator;
+using PLArmyLife.Model.Classes.ObjectPool;
 using PLArmyLife.Model.Classes.Prototype;
 using PLArmyLife.Model.Classes.Singleton;
 using PLArmyLife.ViewModel.Interfaces.Factory;
@@ -35,6 +36,9 @@ namespace PLArmyLifeLife
         field.Children.Add(prototype.MakeCopy().Draw(PicSize.Large).Offset(505, 400).Canvas);
                     */
             #endregion
+
+            #region Builder
+            /*
             Builder builder = new Builder();
 
             builder.SetDrawableBuilder(new TankPlatoonBuilder());
@@ -48,6 +52,26 @@ namespace PLArmyLifeLife
 
             builder.SetDrawableBuilder(new ConnectionPlatoonBuilder());
             field.Children.Add(builder.BuildDrawable().Draw().Offset(550, 200).Canvas);
+            */
+            #endregion
+
+            SolderPool solderPool = new SolderPool();
+
+            solderPool.GetPooledSolder();
+            Solder solder2 = solderPool.GetPooledSolder();
+            Solder solder3 = solderPool.GetPooledSolder();
+            solderPool.GetPooledSolder();
+            field.Children.Add(solderPool.GetDrawableUsed().Draw().Offset(10, 10).Canvas);
+            field.Children.Add(solderPool.GetDrawableFree().Draw().Offset(400, 10).Canvas);
+
+            solderPool.ReleasePooledSolder(solder2);
+            solderPool.ReleasePooledSolder(solder3);
+            field.Children.Add(solderPool.GetDrawableUsed().Draw().Offset(10, 100).Canvas);
+            field.Children.Add(solderPool.GetDrawableFree().Draw().Offset(400, 100).Canvas);
+
+            solderPool.GetPooledSolder();
+            field.Children.Add(solderPool.GetDrawableUsed().Draw().Offset(10, 200).Canvas);
+            field.Children.Add(solderPool.GetDrawableFree().Draw().Offset(400, 200).Canvas);
 
             foreach (var item in History.GetHistory().GetEvents())
             {

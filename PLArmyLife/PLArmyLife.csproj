@@ -94,7 +94,8 @@
     <Compile Include="Model\Classes\Compos\Airkid.cs" />
     <Compile Include="Model\Classes\Compos\Radio.cs" />
     <Compile Include="Model\Classes\Compos\Gun.cs" />
-    <Compile Include="ViewModel\Interfaces\Builder\DrawableBuilder.cs" />
+    <Compile Include="Model\Classes\ObjectPool\SolderPool.cs" />
+    <Compile Include="Model\Interfaces\Builder\DrawableBuilder.cs" />
     <Compile Include="Model\Classes\Compos\Ammo.cs" />
     <Compile Include="Model\Classes\Compos\Composite.cs" />
     <Compile Include="Model\Classes\Compos\Fuel.cs" />
@@ -143,7 +144,7 @@
     <Compile Include="Model\Interfaces\Iterator\ISolderIterator.cs" />
     <Compile Include="Model\Interfaces\Iterator\ISolderNumerable.cs" />
     <Compile Include="Model\Interfaces\Proxy\IMilitaryStock.cs" />
-    <Compile Include="ViewModel\Interfaces\Factory\IDrawableFactory.cs" />
+    <Compile Include="Model\Interfaces\Factory\IDrawableFactory.cs" />
     <Compile Include="Model\Classes\Factory\PlatoonFactory.cs" />
     <Compile Include="Model\Classes\Factory\SolderFactory.cs" />
     <Compile Include="Model\Classes\Factory\TankFactory.cs" />
