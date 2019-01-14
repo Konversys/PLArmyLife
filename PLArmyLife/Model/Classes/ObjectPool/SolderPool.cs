@@ -36,7 +36,7 @@ namespace PLArmyLife.Model.Classes.ObjectPool
         {
             if (free.Count == 0)
             {
-                if (used.Count + free.Count > 9)
+                if (used.Count + free.Count > max)
                     return null;
                 Solder solder = new Solder("", $"Боец {++count}");
                 used.Add(solder);
@@ -71,7 +71,7 @@ namespace PLArmyLife.Model.Classes.ObjectPool
         /// Draw всех свободных бойцов
         /// </summary>
         /// <returns></returns>
-        public IDrawable GetDrawableFree()
+        public VField GetDrawableFree()
         {
             VField field = new VField();
             foreach (var item in free)
@@ -84,7 +84,7 @@ namespace PLArmyLife.Model.Classes.ObjectPool
         /// Draw всех используемых бойцов
         /// </summary>
         /// <returns></returns>
-        public IDrawable GetDrawableUsed()
+        public VField GetDrawableUsed()
         {
             VField field = new VField();
             foreach (var item in used)

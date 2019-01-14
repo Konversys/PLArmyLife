@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PLArmyLife.Model.Classes.Compos;
+using PLArmyLife.Model.Classes.Flyweight;
 using PLArmyLife.Model.Classes.Iterator;
 using PLArmyLife.ViewModel.Interfaces;
 using PLArmyLife.ViewModel.Interfaces.Factory;
@@ -18,7 +19,7 @@ namespace PLArmyLife.Model.Classes.Factory
     {
         public IDrawable CreateDrawable()
         {
-            Platoon platoon = new Platoon();
+            TankPlatoon platoon = new TankPlatoon();
             VField field = new VField();
             field.Add(new Tank().Draw(PicSize.Medium), true);
             field.Add(new Fuel().Draw(PicSize.Small).Offset(-20, 50), true);

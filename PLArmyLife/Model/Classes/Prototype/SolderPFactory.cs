@@ -27,7 +27,7 @@ namespace PLArmyLife.Model.Classes.Prototype
 
         public Solder MakeCopy()
         {
-            return solder.Copy();
+            return (Solder)solder.Copy();
         }
     }
 }

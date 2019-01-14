@@ -1,4 +1,5 @@
 ﻿using PLArmyLife.ViewModel.Interfaces;
+using PLArmyLife.ViewModel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace PLArmyLife.Model.Classes.Builder
         {
             this.drawableBuilder = drawableBuilder;
         }
-        public IDrawable BuildDrawable()
+        public VField BuildDrawable()
         {
             drawableBuilder.CreateDrawableBackground();
             drawableBuilder.CreateDrawableBody();

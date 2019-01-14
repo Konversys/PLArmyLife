@@ -10,7 +10,7 @@ namespace PLArmyLife.Model.Classes.Iterator
     /// <summary>
     /// Солдат
     /// </summary>
-    class Solder : Serviceman, ISolderCopyable, IDrawable
+    class Solder : Serviceman, ICopyable, IDrawable
     {
         /// <summary>
         /// Имя
@@ -54,9 +54,16 @@ namespace PLArmyLife.Model.Classes.Iterator
                 $"{Greeting}");
         }
 
-        public Solder Copy()
+        public object Copy()
         {
-            return new Solder(name, post);
+            Solder solder = new Solder(name, post)
+            {
+                command = this.command,
+                equipment = this.equipment,
+                Greeting = this.Greeting,
+                rank = this.rank,
+            };
+            return solder;
         }
     }
 }

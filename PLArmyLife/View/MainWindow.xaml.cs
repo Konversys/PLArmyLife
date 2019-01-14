@@ -55,6 +55,8 @@ namespace PLArmyLifeLife
             */
             #endregion
 
+            #region Pool
+            /*
             SolderPool solderPool = new SolderPool();
 
             solderPool.GetPooledSolder();
@@ -72,6 +74,8 @@ namespace PLArmyLifeLife
             solderPool.GetPooledSolder();
             field.Children.Add(solderPool.GetDrawableUsed().Draw().Offset(10, 200).Canvas);
             field.Children.Add(solderPool.GetDrawableFree().Draw().Offset(400, 200).Canvas);
+            */
+            #endregion
 
             foreach (var item in History.GetHistory().GetEvents())
             {

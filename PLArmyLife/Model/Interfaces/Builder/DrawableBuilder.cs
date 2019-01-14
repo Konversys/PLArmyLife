@@ -31,13 +31,5 @@ namespace PLArmyLife.Model.Classes.Builder
         /// Билдер фона
         /// </summary>
         public abstract void CreateDrawableBackground();
-        /// <summary>
-        /// Возвращает готовое поле заданного класса
-        /// </summary>
-        /// <returns></returns>
-        public Canvas GetField()
-        {
-            return Field.Canvas;
-        }
     }
 }

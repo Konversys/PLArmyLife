@@ -2,8 +2,8 @@
 
 namespace PLArmyLife.Model.Interfaces
 {
-    internal interface ISolderCopyable
+    interface ICopyable
     {
-        Solder Copy();
+        object Copy();
     }
 }
